@@ -1,11 +1,11 @@
 {% extends 'index.html' %}
-{% block titulo %}Crear Sección{% endblock titulo %}
+{% block titulo %}Crear Inscripción{% endblock titulo %}
 {% block content %}
-    <h1>Registro de Nueva Sección</h1>
+    <h1>Creacion de nueva inscripción</h1>
     <div class="dropdown-divider"></div>
     <form method="post">
     {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Crear</button>
+        <button type="submit">Crear o Editar</button>
     </form>
 {% endblock %}

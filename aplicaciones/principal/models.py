@@ -16,14 +16,26 @@ class Alumno(models.Model):
 
 
 class Grado(models.Model):
-    id = models.AutoField(primary_key=True),
+    id = models.AutoField(primary_key=True)
     Grado = models.CharField(max_length=25)
+
     def __str__(self):
         return self.Grado
 
 
 class Seccion(models.Model):
-    id = models.AutoField(primary_key=True),
+    id = models.AutoField(primary_key=True)
     seccion = models.CharField(max_length=5)
+
     def __str__(self):
         return self.seccion
+
+
+class Inscripcion(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombreCompletoAlumno = models.CharField(max_length=100)
+    gradoInscripcion = models.CharField(max_length=25)
+    seccionInscripcion = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.nombreCompletoAlumno

@@ -1,5 +1,6 @@
 from django import forms
-from .models import Alumno, Grado, Seccion
+from .models import Alumno, Grado, Seccion, Inscripcion
+
 
 class AlumnoForms(forms.ModelForm):
     class Meta:
@@ -16,4 +17,10 @@ class GradoForm(forms.ModelForm):
 class SeccionFrom(forms.ModelForm):
     class Meta:
         model = Seccion
+        fields = '__all__'
+
+
+class InscripcionFrom(forms.ModelForm):
+    class Meta:
+        model = Inscripcion
         fields = '__all__'

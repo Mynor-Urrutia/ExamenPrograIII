@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from aplicaciones.principal.views import inicio, eliminarAlumno, eliminarGrados, eliminarSeccion
-from aplicaciones.principal.classview import AlumnoList, AlumnoCreate, AlumnoUpdate, GradoList, GradoCreate, GradoUpdate, SeccionList, SeccionCreate, SeccionUpdate
+from aplicaciones.principal.views import inicio, eliminarAlumno, eliminarGrados, eliminarSeccion, inscripcion
+from aplicaciones.principal.classview import AlumnoList, AlumnoCreate, AlumnoUpdate, GradoList, GradoCreate, GradoUpdate, SeccionList, SeccionCreate, SeccionUpdate, InscripcionList, InscripcionCreate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='index'),
+    path('inscripcion/', inscripcion, name='inscripcion'),
     path('alumnos/', AlumnoList.as_view(), name='alumnos'),
     path('crear_alumno/', AlumnoCreate.as_view(), name='crear_alumno'),
     path('editarAlumno/<int:pk>/', AlumnoUpdate.as_view(), name='editarAlumno'),
@@ -32,7 +33,9 @@ urlpatterns = [
     path('seccion/', SeccionList.as_view(), name='seccion'),
     path('crear_seccion/', SeccionCreate.as_view(), name='crear_seccion'),
     path('editarSeccion/<int:pk>', SeccionUpdate.as_view(), name='editarSeccion'),
-    path('eliminarSeccion/<int:id>', eliminarSeccion, name='eliminarSeccion')
+    path('eliminarSeccion/<int:id>', eliminarSeccion, name='eliminarSeccion'),
+    path('InscripcionList/', InscripcionList.as_view(), name='InscripcionList'),
+    path('crearInscripcion/', InscripcionCreate.as_view(), name='crearInscripcion')
 
 
 ]

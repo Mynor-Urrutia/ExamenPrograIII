@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block titulo %}Inscripciones{% endblock titulo %}
+{% block content %}
+    <h1>Inscripcion de Alumnos</h1>
+    <div class="dropdown-divider"></div>
+
+    <div>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'crearInscripcion' %}">Crear Nueva Inscripcion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Modificar o Eliminar Inscripcion</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Cod Inscripción</th>
+                    <th scope="col">Nombre del Estudiante</th>
+                    <th scope="col">Grado a Cursar</th>
+                    <th scope="col">Sección Asignada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

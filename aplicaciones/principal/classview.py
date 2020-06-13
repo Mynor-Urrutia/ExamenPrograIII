@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from .models import Alumno
 from .models import Grado
 from .models import Seccion
-from .formEscuela import AlumnoForms, GradoForm, SeccionFrom
+from .models import Inscripcion
+from .formEscuela import AlumnoForms, GradoForm, SeccionFrom, InscripcionFrom
 
 
 class AlumnoList(ListView):
@@ -43,15 +44,18 @@ class GradoCreate(CreateView):
     template_name = 'crearGrado.html'
     success_url = reverse_lazy('index')
 
+
 class GradoUpdate(UpdateView):
     model = Grado
     form_class = GradoForm
     template_name = 'crearGrado.html'
     success_url = reverse_lazy('index')
 
+
 class SeccionList(ListView):
     model = Seccion
     template_name = 'seccion.html'
+
 
 class SeccionCreate(CreateView):
     model = Seccion
@@ -59,8 +63,21 @@ class SeccionCreate(CreateView):
     template_name = 'crearSeccion.html'
     success_url = reverse_lazy('index')
 
+
 class SeccionUpdate(UpdateView):
     model = Seccion
     form_class = SeccionFrom
     template_name = 'crearSeccion.html'
+    success_url = reverse_lazy('index')
+
+
+class InscripcionList(ListView):
+    model = Inscripcion
+    template_name = 'inscripcion.html'
+
+
+class InscripcionCreate(CreateView):
+    model = Inscripcion
+    form_class = InscripcionFrom
+    template_name = 'crearInscripcion.html'
     success_url = reverse_lazy('index')

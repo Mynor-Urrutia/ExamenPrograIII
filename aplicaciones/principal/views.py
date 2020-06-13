@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Alumno
 from .models import Grado
 from .models import Seccion
+from .models import Inscripcion
 from .formEscuela import AlumnoForms, GradoForm, SeccionFrom
 
 def inicio(request):
@@ -113,7 +114,7 @@ def eliminarGrados(request, id):
 
 
 # -----------------------------------------------------------------------------------------------------------------------
-
+"""
 def seccion(request):
     seccion = Seccion.objects.all()
     contexto = {
@@ -155,9 +156,14 @@ def editarSeccion(request, id):
             return redirect('index')
     return render(request, 'crearSeccion.html', contexto)
 
-
+"""
 
 def eliminarSeccion(request, id):
     seccion = Seccion.objects.get(id=id)
     seccion.delete()
     return redirect('index')
+
+def inscripcion(request):
+    return render(request, 'inscripcion.html')
+
+
