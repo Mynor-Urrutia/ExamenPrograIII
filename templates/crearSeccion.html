@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block titulo %}Crear Sección{% endblock titulo %}
+{% block content %}
+    <h1>Registro de Nueva Sección</h1>
+    <form method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+{% endblock %}

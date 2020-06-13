@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="table">
+    <h1>Listado de Secciones Creadas</h1>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sección</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for seccion in object_list %}
+        <tr>
+            <th scope="row">{{ seccion.id }}</th>
+            <td>{{ seccion.seccion }}</td>
+            <td><a href="{% url 'editarSeccion' seccion.id %}">Editar</a> <a href="{% url 'eliminarSeccion' seccion.id %}">Eliminar</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="table">
+    <h1>Listado de alumnos</h1>
+    <thead class="thead-dark">
+        <tr>
+
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Correo Electronico</th>
+            <th scope="col">Encargado</th>
+            <th scope="col">Telefono de Encargado</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for alumnos in object_list %}
+        <tr>
+
+            <td>{{ alumnos.nombreAlumno }}</td>
+            <td>{{ alumnos.apellidoAlumno }}</td>
+            <td>{{ alumnos.direccionAlumno }}</td>
+            <td>{{ alumnos.telefonoAlumno }}</td>
+            <td>{{ alumnos.correoAlumno }}</td>
+            <td>{{ alumnos.encargadoAlumno }}</td>
+            <td>{{ alumnos.telefonoEncargado }}</td>
+            <td><a href="{% url 'editarAlumno' alumnos.id %}">Editar</a> <a href="{% url 'eliminarAlumno' alumnos.id %}">Eliminar</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

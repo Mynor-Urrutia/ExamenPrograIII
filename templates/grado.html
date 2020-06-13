@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Listado de grados creados</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Grado</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for grados in object_list %}
+        <tr>
+            <th scope="row">{{ grados.id }}</th>
+            <td>{{ grados.Grado }}</td>
+            <td><a href="{% url 'editarGrado' grados.id %}">Editar</a> <a href="{% url 'eliminarGrados' grados.id %}">Eliminar</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
